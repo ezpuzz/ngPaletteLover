@@ -17,8 +17,8 @@ angular.module('ngPaletteLoverApp')
       },
       link: function(scope, element, attrs) {
         scope.$watch('color', function(color) {
-          element.css('width', (color.width * 100) + '%');
-          element.css('backgroundColor', color.hex);
+          element.css('width', color.getWidth());
+          element.css('backgroundColor', color.getHex());
         });
       },
     };
