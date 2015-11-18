@@ -8,10 +8,6 @@
  * Controller of the ngPaletteLoverApp
  */
 angular.module('ngPaletteLoverApp')
-  .controller('NewCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('NewCtrl', function ($scope, Palette) {
+    $scope.newPalettes = Palette.listNew();
   });

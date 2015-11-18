@@ -8,16 +8,25 @@
  * Factory in the ngPaletteLoverApp.
  */
 angular.module('ngPaletteLoverApp')
-  .factory('palette', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
+  .factory('Palette', function($resource) {
+    return $resource('http://www.colourlovers.com/api/palettes',
+      // default parameters
+      {
+        format: 'json',
+        jsonCallback: 'JSON_CALLBACK',
+        showPaletteWidths: 1,
+      },
+      // actions
+      {
+        listNew: {
+          method: 'JSONP',
+          url: 'http://www.colourlovers.com/api/palettes/new',
+          isArray: true,
+        },
+        listTop: {
+          method: 'JSONP',
+          url: 'http://www.colourlovers.com/api/palettes/top',
+          isArray: true,
+        }
+      });
   });

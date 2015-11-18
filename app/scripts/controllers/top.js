@@ -8,10 +8,6 @@
  * Controller of the ngPaletteLoverApp
  */
 angular.module('ngPaletteLoverApp')
-  .controller('TopCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('TopCtrl', function ($scope, Palette) {
+    $scope.topPalettes = Palette.listTop();
   });
