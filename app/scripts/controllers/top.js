@@ -33,13 +33,11 @@ angular.module('ngPaletteLoverApp')
     }, true);
 
     $scope.getWorse = function() {
-      console.log('getting worse');
       $scope.offset = $scope.offset + 20;
       self.getPalettes();
     };
 
     $scope.getBetter = function() {
-      console.log('getting better');
       $scope.offset = $scope.offset >= 20 ? $scope.offset - 20 : 0;
       self.getPalettes();
     };

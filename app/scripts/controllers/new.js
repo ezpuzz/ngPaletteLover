@@ -38,13 +38,11 @@ angular.module('ngPaletteLoverApp')
 
     // actions on the scope
     $scope.getOlder = function() {
-      console.log('getting older');
       $scope.offset = $scope.offset + 20;
       self.getPalettes();
     };
 
     $scope.getNewer = function() {
-      console.log('getting newer');
       $scope.offset = $scope.offset >= 20 ? $scope.offset - 20 : 0;
       self.getPalettes();
     };
