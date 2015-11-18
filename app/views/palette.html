@@ -1,7 +1,14 @@
-  <h3 class="palette-name" ng-bind="palette.title"></h3>
+<div class="col-sm-12">
 
-  <div ng-repeat="color in palette.colors" class="palette-color" ng-color="color" ng-bind="color"></div>
+  <a ng-href="{{palette.url}}"><h3 class="palette-name" ng-bind="palette.title"></h3></a>
+
+  <color ng-repeat="color in palette.colors track by $index" color="color">
+  </color>
+
+  <div class="clearfix"></div>
 
   <span class="palette-views label label-primary">{{palette.numViews}} Views</span>
-  <span class="palette-hearts label label-danger">{{palette.numHearts}} Hearts</span>
+  <span class="palette-hearts label label-danger">{{palette.numHearts}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></span>
   <span class="palette-date label label-default" ng-bind="palette.dateCreated"></span>
+
+</div>

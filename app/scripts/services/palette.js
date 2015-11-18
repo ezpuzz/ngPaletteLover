@@ -22,11 +22,33 @@ angular.module('ngPaletteLoverApp')
           method: 'JSONP',
           url: 'http://www.colourlovers.com/api/palettes/new',
           isArray: true,
+          transformResponse: function(data) {
+            return data.map(function(palette, index) {
+              palette.colors =  palette.colors.map(function(color, index) {
+                return {
+                  hex: '#' + color,
+                  width: palette.colorWidths[index],
+                };
+              });
+              return palette;
+            });
+          },
         },
         listTop: {
           method: 'JSONP',
           url: 'http://www.colourlovers.com/api/palettes/top',
           isArray: true,
+          transformResponse: function(data) {
+            return data.map(function(palette, index) {
+              palette.colors =  palette.colors.map(function(color, index) {
+                return {
+                  hex: '#' + color,
+                  width: palette.colorWidths[index],
+                };
+              });
+              return palette;
+            });
+          },
         }
       });
   });

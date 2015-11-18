@@ -89,3 +89,16 @@ body {
     border-bottom: 0;
   }
 }
+
+palette {
+  border: thin solid black;
+  display: block;
+  padding-bottom: 10px;
+  margin: 10px 0;
+}
+
+.palette-color {
+  height: 20px;
+  width: 20%;
+  float: left;
+}
