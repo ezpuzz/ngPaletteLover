@@ -19,11 +19,6 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
       .when('/top', {
         templateUrl: 'views/top.html',
         controller: 'TopCtrl',
@@ -35,6 +30,6 @@ angular
         controllerAs: 'new'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/top'
       });
   });
