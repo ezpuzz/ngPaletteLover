@@ -9,5 +9,7 @@
  */
 angular.module('ngPaletteLoverApp')
   .controller('NewCtrl', function ($scope, Palette) {
-    $scope.newPalettes = Palette.listNew();
+    $scope.newPalettes = Palette.list({
+      type: 'new',
+    });
   });

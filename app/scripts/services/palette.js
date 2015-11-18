@@ -15,12 +15,13 @@ angular.module('ngPaletteLoverApp')
         format: 'json',
         jsonCallback: 'JSON_CALLBACK',
         showPaletteWidths: 1,
+        type: 'top',
       },
       // actions
       {
-        listNew: {
+        list: {
           method: 'JSONP',
-          url: 'http://www.colourlovers.com/api/palettes/new',
+          url: 'http://www.colourlovers.com/api/palettes/:type',
           isArray: true,
           transformResponse: function(data) {
             return data.map(function(palette, index) {
@@ -34,21 +35,5 @@ angular.module('ngPaletteLoverApp')
             });
           },
         },
-        listTop: {
-          method: 'JSONP',
-          url: 'http://www.colourlovers.com/api/palettes/top',
-          isArray: true,
-          transformResponse: function(data) {
-            return data.map(function(palette, index) {
-              palette.colors =  palette.colors.map(function(color, index) {
-                return {
-                  hex: '#' + color,
-                  width: palette.colorWidths[index],
-                };
-              });
-              return palette;
-            });
-          },
-        }
       });
   });

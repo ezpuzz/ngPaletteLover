@@ -9,5 +9,6 @@
  */
 angular.module('ngPaletteLoverApp')
   .controller('TopCtrl', function ($scope, Palette) {
-    $scope.topPalettes = Palette.listTop();
+    $scope.topPalettes = Palette.list();
+    $scope.offset = 0;
   });
