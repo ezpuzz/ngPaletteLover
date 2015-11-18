@@ -1,0 +1,3 @@
+<div class="btn-group" role="group" aria-label="Hue Filters">
+  <button ng-repeat="hue in hues" type="button" class="btn btn-default btn-sm" ng-class="{active: selectedHues.indexOf(hue) > -1}" ng-click="toggleHue(hue)">{{hue}}</button>
+</div>
